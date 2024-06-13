@@ -52,6 +52,18 @@ export default function Oportunidades() {
             textoOpcional="Essa é para ambos"
           />
         </div>
+        <p
+          style={{
+            textAlign: "center",
+            marginTop: "20px",
+            fontFamily: "DM Sans, sans-serif",
+            fontOpticalSizing: "auto",
+            fontSize: "18px",
+          }}
+        >
+          Se preferir outra, pode sugerir. Gostei de todas essas e também esotu
+          aberto para novas escolhas
+        </p>
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <Link
             href="/"
