@@ -31,6 +31,26 @@ export default function Oportunidades() {
             outrasImagens={["/img/aliancas/par-2/detalhes-2-2.webp"]}
             textoOpcional="Aqui, uma é diferente da outra, um para cada. E poderemos escrever algo no interior delas"
           />
+          <Alianca
+            imgSrc="/img/aliancas/par-3/par-3.png"
+            nome="Aliança 3"
+            detalhesImgSrc="/img/aliancas/par-3/par-3.png"
+            textoOpcional="Essa é para ambos"
+          />
+          <Alianca
+            imgSrc="/img/aliancas/par-4/par-4.png"
+            nome="Aliança 4"
+            detalhesImgSrc="/img/aliancas/par-4/par-4.png"
+            textoOpcional="Essa é para ambos"
+            outrasImagens={["/img/aliancas/par-4/par-4-detalhes.png"]}
+          />
+          <Alianca
+            imgSrc="/img/aliancas/par-5/par-5.png"
+            nome="Aliança 5"
+            detalhesImgSrc="/img/aliancas/par-5/par-5.png"
+            outrasImagens={["/img/aliancas/par-5/detalhes-5.png"]}
+            textoOpcional="Essa é para ambos"
+          />
         </div>
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <Link
