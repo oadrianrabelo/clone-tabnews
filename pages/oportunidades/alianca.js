@@ -23,7 +23,7 @@ const customStyles = {
     justifyContent: "center",
     alignItems: "center",
     gap: "20px", // Espaçamento entre as imagens
-    marginBottom: "30px", // Espaçamento abaixo das imagens
+    marginBottom: "10px", // Espaçamento abaixo das imagens
   },
   image: {
     maxWidth: "100%",
@@ -31,11 +31,22 @@ const customStyles = {
     objectFit: "contain",
     borderRadius: "8px",
   },
+  text: {
+    color: "#fff",
+    textAlign: "center",
+    marginTop: "10px",
+  },
 };
 
 Modal.setAppElement("#__next");
 
-const Alianca = ({ imgSrc, detalhesImgSrc, outrasImagens = [], nome }) => {
+const Alianca = ({
+  imgSrc,
+  detalhesImgSrc,
+  outrasImagens = [],
+  nome,
+  textoOpcional,
+}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -78,26 +89,7 @@ const Alianca = ({ imgSrc, detalhesImgSrc, outrasImagens = [], nome }) => {
             />
           ))}
         </div>
-        <button
-          style={{
-            alignSelf: "center",
-            marginTop: "10px", // Espaçamento acima do botão Enviar Email
-            padding: "10px 20px",
-            backgroundColor: "#fff",
-            color: "#000",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontSize: "16px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-            transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
-            display: "block",
-            margin: "10px auto", // Espaçamento ao redor do botão
-          }}
-          onClick={() => enviarEmail(nome)}
-        >
-          Enviar Email
-        </button>
+        {textoOpcional && <p style={customStyles.text}>{textoOpcional}</p>}
         <button
           style={{
             alignSelf: "center",
