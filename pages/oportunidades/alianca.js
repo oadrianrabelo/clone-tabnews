@@ -9,8 +9,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: "80%",
-    maxHeight: "80%",
+    width: "85%", // Largura do modal ajustada para 50% da largura da tela
+    height: "85%", // Altura do modal ajustada para 50% da altura da tela
     overflow: "auto",
     padding: "20px",
     border: "none",
@@ -33,18 +33,11 @@ const Alianca = ({ imgSrc, detalhesImgSrc, nome }) => {
     setModalIsOpen(false);
   };
 
-  const enviarEmail = (aliancaEscolhida) => {
-    // Simular o envio do email aqui (pode ser uma chamada para uma API de backend)
-    console.log(`Usuário escolheu a aliança ${aliancaEscolhida}`);
-    // Aqui você poderia adicionar a lógica para enviar o email de verdade
-    // Pode utilizar bibliotecas como nodemailer no backend para isso
-  };
-
   return (
     <>
       <div
         className="alianca-thumbnail"
-        style={{ backgroundImage: `url(${imgSrc})` }}
+        style={{ backgroundImage: `url(${imgSrc})`, cursor: "pointer" }}
         onClick={openModal}
       ></div>
       <Modal
@@ -56,10 +49,25 @@ const Alianca = ({ imgSrc, detalhesImgSrc, nome }) => {
         <img
           src={detalhesImgSrc}
           alt={`Detalhes da ${nome}`}
-          style={{ maxWidth: "100%", maxHeight: "400px", marginBottom: "20px" }}
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
-        <button onClick={() => enviarEmail(nome)}>Enviar Email</button>
-        <button onClick={closeModal}>Fechar</button>
+        <button
+          style={{
+            marginTop: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#fff",
+            color: "#000",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "16px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
+          }}
+          onClick={closeModal}
+        >
+          Fechar Modal
+        </button>
       </Modal>
     </>
   );

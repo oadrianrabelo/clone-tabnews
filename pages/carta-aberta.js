@@ -6,7 +6,7 @@ export function CartaAberta() {
       <main
         style={{
           padding: "20px",
-          fontFamily: "Arial, sans-serif",
+          fontFamily: "Roboto, sans-serif",
           textAlign: "center",
         }}
       >
@@ -26,6 +26,9 @@ export function CartaAberta() {
             textAlign: "justify",
             maxWidth: "600px",
             margin: "auto",
+            fontFamily: "DM Sans, sans-serif",
+            fontOpticalSizing: "auto",
+            fontSize: "18px",
           }}
         >
           <p>

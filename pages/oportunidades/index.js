@@ -9,31 +9,46 @@ export default function Oportunidades() {
         <title>Carta aberta - Oportunidade</title>
       </Head>
       <main>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontFamily: "DM Sans, sans-serif",
+            fontOpticalSizing: "auto",
+            fontSize: "18px",
+          }}
+        >
           <Alianca
-            imgSrc="img/aliancas/par-1/par-1.webp"
-            nome="Aliança 2"
-            detalhes="public/img/aliancas/par-1/detalhes-1.webp"
+            imgSrc="/img/aliancas/par-1/par-1.webp"
+            nome="Aliança 1"
+            detalhesImgSrc="/img/aliancas/par-1/detalhes-1.webp"
           />
           <Alianca
-            imgSrc="img/aliancas/par-2/par-2.webp"
+            imgSrc="/img/aliancas/par-2/par-2.webp"
             nome="Aliança 2"
-            detalhes="Detalhes da aliança"
+            detalhesImgSrc="/img/aliancas/par-2/detalhes-2.webp"
           />
         </div>
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <div
+          style={{
+            alignSelf: "center",
+            textAlign: "center",
+            marginTop: "20px",
+          }}
+        >
           <Link
             href="/"
             style={{
               textDecoration: "none",
-              color: "#fff",
+              color: "#000",
               fontSize: "16px",
               padding: "10px 20px",
               border: "1px solid #000",
               borderRadius: "4px",
-              transition: "background-color 0.3s, color 0.3s",
-              backgroundColor: "transparent",
               display: "inline-block",
+              backgroundColor: "#fff",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+              transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
             }}
           >
             Voltar para a página inicial
