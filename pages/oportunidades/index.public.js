@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Alianca from "./alianca";
 import Link from "next/link";
+import Alianca from "pages/interface/components/alianca";
 
 export default function Oportunidades() {
   return (
