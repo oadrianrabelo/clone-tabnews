@@ -1,5 +1,14 @@
+import Head from "next/head";
+import { CartaAberta } from "./carta-aberta";
 function Home() {
-  return <h1>Andressa, eu amo você! ❤️</h1>;
+  return (
+    <>
+      <Head>
+        <title>Carta aberta</title>
+      </Head>
+      <CartaAberta />
+    </>
+  );
 }
 
 export default Home;
