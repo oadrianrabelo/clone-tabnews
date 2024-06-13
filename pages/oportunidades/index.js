@@ -27,15 +27,10 @@ export default function Oportunidades() {
             imgSrc="/img/aliancas/par-2/par-2.webp"
             nome="Aliança 2"
             detalhesImgSrc="/img/aliancas/par-2/detalhes-2.webp"
+            outrasImagens={["/img/aliancas/par-2/detalhes-2-2.webp"]}
           />
         </div>
-        <div
-          style={{
-            alignSelf: "center",
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
           <Link
             href="/"
             style={{
