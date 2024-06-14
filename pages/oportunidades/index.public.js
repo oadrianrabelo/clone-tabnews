@@ -9,15 +9,7 @@ export default function Oportunidades() {
         <title>Carta aberta - Oportunidade</title>
       </Head>
       <main>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            fontFamily: "DM Sans, sans-serif",
-            fontOpticalSizing: "auto",
-            fontSize: "18px",
-          }}
-        >
+        <div className="aliancas-container">
           <Alianca
             imgSrc="/img/aliancas/par-1/par-1.webp"
             nome="Aliança 1"
@@ -41,8 +33,8 @@ export default function Oportunidades() {
             imgSrc="/img/aliancas/par-4/par-4.png"
             nome="Aliança 4"
             detalhesImgSrc="/img/aliancas/par-4/par-4.png"
+            outrasImagens={["/img/aliancas/par-4/detalhes-4.jpg"]}
             textoOpcional="Essa é para ambos"
-            outrasImagens={["/img/aliancas/par-4/par-4-detalhes.png"]}
           />
           <Alianca
             imgSrc="/img/aliancas/par-5/par-5.png"
@@ -61,8 +53,8 @@ export default function Oportunidades() {
             fontSize: "18px",
           }}
         >
-          Se preferir outra, pode sugerir. Gostei de todas essas e também esotu
-          aberto para novas escolhas
+          Se preferir outra, pode sugerir. Gostei de todas essas e também estou
+          aberto para novas escolhas.
         </p>
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <Link
@@ -70,6 +62,7 @@ export default function Oportunidades() {
             style={{
               textDecoration: "none",
               color: "#000",
+              marginBottom: "20px",
               fontSize: "16px",
               padding: "10px 20px",
               border: "1px solid #000",
@@ -84,6 +77,31 @@ export default function Oportunidades() {
           </Link>
         </div>
       </main>
+
+      <style jsx>{`
+        .aliancas-container {
+          display: flex;
+          justify-content: center;
+          gap: 10px; /* Espaçamento entre as alianças */
+          flex-wrap: wrap; /* Permitir que as alianças quebrem linha quando não couberem na largura */
+        }
+
+        .aliancas-container > :last-child {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .aliancas-container {
+            flex-direction: column; /* Exibir em coluna em dispositivos móveis */
+            align-items: center; /* Centralizar itens na coluna */
+          }
+          .aliancas-container > :last-child {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      `}</style>
     </>
   );
 }

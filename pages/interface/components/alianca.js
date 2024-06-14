@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 
 const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
   content: {
     top: "50%",
     left: "50%",
@@ -9,21 +12,22 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "80%", // Largura do modal ajustada para 80% da largura da tela
-    height: "80%", // Altura do modal ajustada para 80% da altura da tela
+    width: "80%",
+    height: "80%",
     overflow: "auto",
     padding: "20px",
     border: "none",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
     borderRadius: "8px",
-    backgroundColor: "#333",
+    backgroundColor: "#222",
   },
   imageContainer: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    gap: "20px", // Espaçamento entre as imagens
-    marginBottom: "10px", // Espaçamento abaixo das imagens
+    gap: "20px",
+    marginBottom: "10px",
   },
   image: {
     maxWidth: "100%",
@@ -35,6 +39,25 @@ const customStyles = {
     color: "#fff",
     textAlign: "center",
     marginTop: "10px",
+  },
+  "@media (max-width: 768px)": {
+    content: {
+      width: "90%",
+      height: "90%",
+      padding: "10px",
+    },
+    imageContainer: {
+      alignItems: "center",
+      marginBottom: "10px",
+      flexDirection: "column",
+    },
+    image: {
+      maxWidth: "100%",
+      maxHeight: "100%",
+      objectFit: "contain",
+      borderRadius: "8px",
+      marginBottom: "30px",
+    },
   },
 };
 
