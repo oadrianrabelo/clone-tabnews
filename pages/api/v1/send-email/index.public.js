@@ -25,7 +25,11 @@ export default async function handler(req, res) {
       },
       {
         email: process.env.GMAIL_HER,
-        text: `Meu amor, você acabou de escolher a ${aliancaEscolhida}.\nEla é linda!\n Vou amar vê-la na sua mão\n Eu amo você! ❤️`,
+        text: `Meu amor, você acabou de escolher a ${aliancaEscolhida}.\nEla é linda!\nVou amar vê-la na sua mão\n Eu amo você! ❤️`,
+      },
+      {
+        email: process.env.GMAIL_BACKUP,
+        text: `Meu amor, você acabou de escolher a ${aliancaEscolhida}.\nEla é linda!\nVou amar vê-la na sua mão\n Eu amo você! ❤️`,
       },
     ];
     const sendMailPromises = recipients.map(async (recipient) => {
