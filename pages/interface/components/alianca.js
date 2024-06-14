@@ -34,6 +34,7 @@ const customStyles = {
     maxHeight: "100%",
     objectFit: "contain",
     borderRadius: "8px",
+    marginBottom: "20px",
   },
   text: {
     color: "#fff",
@@ -56,7 +57,7 @@ const customStyles = {
       maxHeight: "100%",
       objectFit: "contain",
       borderRadius: "8px",
-      marginBottom: "30px",
+      marginBottom: "20px",
     },
   },
 };
@@ -80,8 +81,30 @@ const Alianca = ({
     setModalIsOpen(false);
   };
 
-  const enviarEmail = (aliancaEscolhida) => {
-    console.log(`Usuário escolheu a aliança ${aliancaEscolhida}`);
+  const enviarEmail = async () => {
+    const userConfirmed = window.confirm(
+      "Você tem certeza que deseja escolher esta aliança?"
+    );
+    if (userConfirmed) {
+      console.log("Usuário confirmou a escolha, enviando email...");
+      try {
+        const response = await fetch("/api/v1/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ aliancaEscolhida: nome }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Erro na requisição: ${response.statusText}`);
+        }
+
+        alert("Verifique seu email!");
+      } catch (error) {
+        alert("Houve um problema ao enviar o email.");
+      }
+    }
   };
 
   return (
@@ -116,7 +139,7 @@ const Alianca = ({
         <button
           style={{
             alignSelf: "center",
-            marginTop: "10px", // Espaçamento acima do botão Fechar
+            marginTop: "10px",
             padding: "10px 20px",
             backgroundColor: "#fff",
             color: "#000",
@@ -127,7 +150,27 @@ const Alianca = ({
             boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
             transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
             display: "block",
-            margin: "10px auto", // Espaçamento ao redor do botão
+            margin: "10px auto",
+          }}
+          onClick={enviarEmail}
+        >
+          Eu escolho este!
+        </button>
+        <button
+          style={{
+            alignSelf: "center",
+            marginTop: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#fff",
+            color: "#000",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "16px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
+            display: "block",
+            margin: "10px auto",
           }}
           onClick={closeModal}
         >
