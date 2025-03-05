@@ -12,7 +12,6 @@ export default function StatusPage() {
     <>
       <h1>Status</h1>
       <UpdatedAt />
-      <h1>Database</h1>
       <DatabaseStatus />
     </>
   );
@@ -37,23 +36,25 @@ function DatabaseStatus() {
     refreshInterval: 2000,
   });
 
-  let databaseVersionText = "Carregando...";
-  let databaseOpendedConnectionsText = "Carregando...";
-  let databaseMaxConnectionsText = "Carregando...";
-
+  let databaseStatusInformation = "Carregando...";
   if (!isLoading && data) {
-    databaseVersionText = data.dependencies.database.version;
-    databaseOpendedConnectionsText =
-      data.dependencies.database.opended_connections;
-    databaseMaxConnectionsText = data.dependencies.database.max_connections;
+    databaseStatusInformation = (
+      <>
+        <div>Versão: {data.dependencies.database.version}</div>
+        <div>
+          Conexões abertas: {data.dependencies.database.opended_connections}
+        </div>
+        <div>
+          Conexões máximas: {data.dependencies.database.max_connections}
+        </div>
+      </>
+    );
   }
+
   return (
     <>
-      <div>
-        <p>Versão: {databaseVersionText}</p>
-        <p>Conexões abertas: {databaseOpendedConnectionsText}</p>
-        <p>Conexões máximas: {databaseMaxConnectionsText}</p>
-      </div>
+      <h2>Database</h2>
+      <div>{databaseStatusInformation}</div>
     </>
   );
 }
