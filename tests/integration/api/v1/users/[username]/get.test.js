@@ -22,20 +22,20 @@ describe("GET /api/v1/users/[username]", () => {
 
       expect(response2.status).toBe(200);
 
-      const response2Body = await response2.json();
+      const responseBody = await response2.json();
 
-      expect(response2Body).toEqual({
-        id: response2Body.id,
+      expect(responseBody).toEqual({
+        id: responseBody.id,
         username: "MesmoCase",
         email: "mesmo.case@dev.com",
-        password: response2Body.password,
-        created_at: response2Body.created_at,
-        updated_at: response2Body.updated_at,
+        password: responseBody.password,
+        created_at: responseBody.created_at,
+        updated_at: responseBody.updated_at,
       });
 
-      expect(uuidVersion(response2Body.id)).toBe(4);
-      expect(Date.parse(response2Body.created_at)).not.toBeNaN();
-      expect(Date.parse(response2Body.updated_at)).not.toBeNaN();
+      expect(uuidVersion(responseBody.id)).toBe(4);
+      expect(Date.parse(responseBody.created_at)).not.toBeNaN();
+      expect(Date.parse(responseBody.updated_at)).not.toBeNaN();
     });
 
     test("With case mismatch", async () => {
